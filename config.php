@@ -1,13 +1,7 @@
 <?php
-
-$dbhost = 'localhost';
-$dbname = 'chat';
-$dbuser = 'root';
-$dbpass = '';
-
-
+$dsn = "mysql:host=localhost;dbname=chat;charset=utf8";
 try {
-    $db = new PDO("mysql:dbhost=$dbhost; dbname = $dbname", "$dbuser", "$dbpass");
+    $dbConn = new PDO($dsn, 'root', '');
 } catch (PDOException $e)
 {
     echo $e->getMessage();
